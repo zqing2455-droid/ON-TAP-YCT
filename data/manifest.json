@@ -1,0 +1,47 @@
+{
+ "levels": [
+  {
+   "id": "yct1",
+   "level": 1,
+   "note": "Nhập môn: chào hỏi, số đếm, gia đình",
+   "lessons": [
+    {
+     "id": "bai1",
+     "no": 1,
+     "title": "你好！",
+     "sub": "Chào hỏi · số 1–10"
+    }
+   ]
+  },
+  {
+   "id": "yct2",
+   "level": 2,
+   "note": "Mở rộng: trường lớp, thời gian, đồ vật",
+   "lessons": []
+  },
+  {
+   "id": "yct3",
+   "level": 3,
+   "note": "Câu dài hơn, kể việc hằng ngày",
+   "lessons": []
+  },
+  {
+   "id": "yct4",
+   "level": 4,
+   "note": "Đoạn hội thoại, miêu tả",
+   "lessons": []
+  },
+  {
+   "id": "yct5",
+   "level": 5,
+   "note": "Đọc hiểu đoạn ngắn",
+   "lessons": []
+  },
+  {
+   "id": "yct6",
+   "level": 6,
+   "note": "Tổng hợp nâng cao",
+   "lessons": []
+  }
+ ]
+}

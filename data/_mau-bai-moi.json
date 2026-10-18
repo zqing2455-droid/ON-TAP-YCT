@@ -1,0 +1,32 @@
+{
+ "title": "<chữ Hán tên bài>",
+ "sub": "<mô tả ngắn>",
+ "pinyin": {
+  "例": "lì",
+  "句": "jù"
+ },
+ "words": [
+  {
+   "h": "字",
+   "p": "zì",
+   "v": "nghĩa tiếng Việt"
+  }
+ ],
+ "phrases": [],
+ "sentences": [
+  {
+   "h": "例句。",
+   "p": "lì jù.",
+   "v": "Nghĩa câu",
+   "tok": [
+    "例",
+    "句",
+    "。"
+   ]
+  }
+ ],
+ "numbers": [],
+ "song": [],
+ "talk": [],
+ "audio": {}
+}
