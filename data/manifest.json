@@ -3,13 +3,19 @@
   {
    "id": "yct1",
    "level": 1,
-   "note": "Nhập môn: chào hỏi, số đếm, gia đình",
+   "note": "Nhập môn: chào hỏi, số đếm, làm quen",
    "lessons": [
     {
      "id": "bai1",
      "no": 1,
      "title": "你好！",
      "sub": "Chào hỏi · số 1–10"
+    },
+    {
+     "id": "bai2",
+     "no": 2,
+     "title": "你叫什么？",
+     "sub": "Hỏi tên · làm quen"
     }
    ]
   },
