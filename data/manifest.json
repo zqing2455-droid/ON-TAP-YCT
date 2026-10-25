@@ -3,7 +3,7 @@
   {
    "id": "yct1",
    "level": 1,
-   "note": "Nhập môn: chào hỏi, số đếm, làm quen",
+   "note": "Nhập môn: chào hỏi, làm quen, gia đình, thời gian",
    "lessons": [
     {
      "id": "bai1",
@@ -16,6 +16,60 @@
      "no": 2,
      "title": "你叫什么？",
      "sub": "Hỏi tên · làm quen"
+    },
+    {
+     "id": "bai3",
+     "no": 3,
+     "title": "他是谁？",
+     "sub": "Hỏi “ai” · quốc tịch"
+    },
+    {
+     "id": "bai4",
+     "no": 4,
+     "title": "我家有四口人",
+     "sub": "Gia đình · đếm người"
+    },
+    {
+     "id": "bai5",
+     "no": 5,
+     "title": "我6岁。",
+     "sub": "Hỏi tuổi"
+    },
+    {
+     "id": "bai6",
+     "no": 6,
+     "title": "你的个子真高！",
+     "sub": "Miêu tả người · bộ phận cơ thể"
+    },
+    {
+     "id": "bai7",
+     "no": 7,
+     "title": "这是谁的狗？",
+     "sub": "这 / 那 · con vật"
+    },
+    {
+     "id": "bai8",
+     "no": 8,
+     "title": "我去商店。",
+     "sub": "在 / 去 · nơi chốn"
+    },
+    {
+     "id": "bai9",
+     "no": 9,
+     "title": "今天星期几？",
+     "sub": "Thứ · ngày sinh nhật"
+    },
+    {
+     "id": "bai10",
+     "no": 10,
+     "title": "现在几点？",
+     "sub": "Xem giờ · hẹn giờ"
+    },
+    {
+     "id": "bai11",
+     "no": 11,
+     "title": "你吃什么？",
+     "sub": "Ăn uống · món ăn"
     }
    ]
   },
