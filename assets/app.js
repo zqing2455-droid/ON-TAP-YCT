@@ -90,6 +90,7 @@ let curLevel=null;
 /* ---------- định tuyến ---------- */
 function go(hash){location.hash=hash;}
 function route(){
+ if(window.Games)Games.stop();
  const h=(location.hash||"#/").replace(/^#/,"");
  const parts=h.split("/").filter(Boolean);           // ["yct1","bai1"]
  if(!parts.length)return viewHome();
@@ -165,6 +166,14 @@ async function viewLesson(lvId,lsId){
   b.innerHTML='<span class="ico">'+a.ico+'</span><span>'+a.t+'<span class="sub">'+a.sub+
     (best?' · <span class="done">'+best+'</span>':'')+'</span></span>';
   b.onclick=()=>openAct(k);g.appendChild(b);});
+ const gl=window.Games?Games.list(LESSON):[];
+ if(gl.length){const c=document.createElement("div");c.className="card";
+  c.innerHTML='<h2>🎮 Trò chơi</h2><p class="lead">Chơi cùng Gấu Trúc để nhớ từ của bài này nhé!</p><div class="grid" id="games"></div>';
+  $("app").appendChild(c);
+  gl.forEach(a=>{const b=document.createElement("button"),best=S.best[lvId+"/"+lsId+"/g-"+a.key];
+   b.innerHTML='<span class="ico">'+a.ico+'</span><span>'+a.t+'<span class="sub">'+a.sub+
+     (best?' · <span class="done">'+esc(best)+'</span>':'')+'</span></span>';
+   b.onclick=()=>Games.open(a.key);$("games").appendChild(b);});}
  applyPY();
 }
 

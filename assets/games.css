@@ -1,0 +1,117 @@
+/* ÔN TẬP YCT — giao diện trò chơi (đi cùng assets/games.js) */
+.g-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.g-head h2{margin:0}
+.g-tools{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.g-tools button{padding:10px 14px;font-size:15px}
+.g-tools button.on{background:var(--sky);color:#fff}
+.g-lead{color:var(--muted);font-size:15px;margin:8px 0 12px}
+.g-prompt{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);
+  border-radius:18px;padding:10px 14px;margin-bottom:10px;min-height:66px}
+.g-prompt .what{font-size:21px;font-weight:700;flex:1 1 200px}
+.g-pbtn{display:flex;gap:8px}
+.g-pbtn button{padding:10px 16px;font-size:16px}
+.dots{display:flex;gap:5px;flex-wrap:wrap}
+.dots i{width:12px;height:12px;border-radius:50%;background:#E7EFF5}
+.dots i.done{background:var(--green)}
+.dots i.cur{background:var(--yellow);box-shadow:0 0 0 3px var(--cream)}
+
+/* --- 1. câu cá --- */
+.pond{position:relative;height:430px;border-radius:22px;overflow:hidden;border:3px solid var(--sky);--rise:-300px;
+  background:linear-gradient(180deg,#EAF7FF 0,#EAF7FF 100px,#A9DEF7 100px,#62B7E8 100%);
+  touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.pond::before{content:"";position:absolute;left:0;right:0;top:100px;bottom:0;pointer-events:none;
+  background:repeating-linear-gradient(176deg,rgba(255,255,255,.18) 0 2px,transparent 2px 26px)}
+.deco{position:absolute;inset:0;pointer-events:none}
+.weed{position:absolute;bottom:14px;width:auto;transform-origin:50% 100%}
+.weed.far{opacity:.6;bottom:18px}
+.weed.sway{animation:gsway 4.5s ease-in-out infinite alternate}
+.sand{position:absolute;left:0;right:0;bottom:0;width:100%;height:34px}
+.bub{position:absolute;bottom:22px;border-radius:50%;border:2px solid rgba(255,255,255,.9);
+  background:rgba(255,255,255,.2);opacity:0;animation:gbub 7s linear infinite}
+@keyframes gsway{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+@keyframes gbub{0%{transform:translateY(0);opacity:0}12%{opacity:1}85%{opacity:.9}100%{transform:translateY(var(--rise));opacity:0}}
+.bank{position:absolute;left:-40px;top:78px;width:196px;height:60px;background:#9AD9A6;border-radius:50%}
+.angler{position:absolute;left:8px;top:4px;width:96px;height:104px;z-index:1;transform-origin:0 0}
+.angler svg{position:absolute;inset:0;width:100%;height:100%}
+.angler-head{position:absolute;left:3px;top:0;width:86px;height:auto}
+.pond.sm .angler{transform:scale(.76)}
+.pond.sm .bank{width:150px;top:70px}
+.pond-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3}
+.rod{stroke:#8B5A2B;stroke-width:4;stroke-linecap:round}
+.fline{stroke:#55606E;stroke-width:1.5}
+#bob{fill:var(--red);stroke:#fff;stroke-width:1.5}
+/* con cá kéo theo tấm biển chữ; .left = đang bơi sang trái */
+.fish{position:absolute;z-index:2;padding:0;border:none;background:none;border-radius:0;
+  display:flex;align-items:center;flex-direction:row;-webkit-tap-highlight-color:transparent}
+.fish.left{flex-direction:row-reverse}
+.fish:active{transform:none}
+.fish:focus-visible{outline:3px solid #fff;outline-offset:4px;border-radius:40px}
+.fimg{display:block;flex:none;filter:drop-shadow(0 3px 0 rgba(30,80,120,.22))}
+.fish.left .fimg{transform:scaleX(-1)}
+.fish:hover .fimg{filter:drop-shadow(0 3px 0 rgba(30,80,120,.22)) brightness(1.07)}
+.flabel{position:relative;z-index:1;background:#fff;border:2px solid rgba(47,58,74,.3);border-radius:999px;
+  padding:1px 12px;margin-right:-8px;white-space:nowrap;line-height:1.3;color:var(--ink);font-weight:400;
+  box-shadow:0 3px 0 rgba(30,80,120,.2)}
+.fish.left .flabel{margin-right:0;margin-left:-8px}
+.fish.no{opacity:.32;animation:gshake .4s}
+.fish.got{z-index:4}
+@keyframes gshake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+
+/* --- 2. đường đua --- */
+.track{display:grid;gap:8px;margin:0 0 12px}
+.lane{border:2px solid var(--line);border-radius:18px;padding:6px 12px 4px;background:#F7FCFF}
+.lane.on{border-color:var(--yellow);background:var(--cream)}
+.lane .who{font-size:13.5px;font-weight:700;color:var(--muted)}
+.lane.on .who{color:var(--ink)}
+.road{position:relative;height:54px;
+  background:repeating-linear-gradient(90deg,transparent 0 12px,#C9DCE9 12px 26px) left 30px/100% 3px no-repeat}
+.runner{position:absolute;top:3px;left:0;width:48px;height:48px;border-radius:50%;background:#fff;
+  border:3px solid var(--sky);display:flex;align-items:center;justify-content:center;font-size:27px;font-style:normal;
+  transition:left .7s cubic-bezier(.3,1.5,.5,1);z-index:1}
+#lane1 .runner{border-color:var(--pink)}
+.runner img{width:40px;height:40px;object-fit:contain}
+.goal{position:absolute;right:2px;top:2px;width:38px;height:50px}
+.qbox{border:3px dashed var(--sky);border-radius:22px;background:linear-gradient(180deg,#FFFDF5,#F3FAFF);
+  padding:14px 16px;text-align:center;min-height:138px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.qtype{font-size:15px;color:var(--muted);font-weight:700}
+.qtext{font-size:44px;line-height:1.7}
+.qhint{font-size:.8em}
+.qmean{font-size:30px;font-weight:700;margin:6px 0}
+.qsub{font-size:15.5px;color:var(--muted)}
+.blank{display:inline-block;min-width:1.5em;border-bottom:4px solid var(--orange);color:var(--orange);margin:0 4px;line-height:1.2}
+.blank.fill{color:#1d7a46;border-color:var(--green)}
+.opts.race-opts{grid-template-columns:1fr 1fr}
+.race-opts button{background:#FFE08A;border-color:var(--yellow)}
+
+/* --- 3. trốn sau bụi trúc --- */
+.hgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;transition:opacity .28s}
+.hgrid.out{opacity:0}
+.hcard{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:156px;
+  background:#fff;border:3px solid var(--line);border-radius:20px;padding:10px 6px;font-weight:400}
+.hp{color:#C73E66;font-weight:700;font-size:17px}
+.hh{font-size:54px;line-height:1.15;color:var(--ink)}
+.hv{font-size:14.5px;color:var(--muted);font-weight:500;line-height:1.3}
+.hcard.bush{background:linear-gradient(180deg,#EAF7FF,#E1F8EA);border-style:dashed;border-color:var(--green);
+  padding:0;overflow:hidden}
+.hcard.bush svg{width:100%;height:150px;display:block}
+.hcard.found{background:var(--green-l);border-color:var(--green)}
+.opts.hide-opts{grid-template-columns:repeat(3,1fr);margin-top:18px}
+.opts.hide-opts:empty{display:none}
+.opts.hide-opts button.zh{font-size:34px;padding:14px 4px;white-space:nowrap}
+
+@media(max-width:520px){
+  .pond{height:390px;--rise:-262px}
+  .g-prompt .what{font-size:18px}
+  .qtext{font-size:32px}
+  .qmean{font-size:24px}
+  .hgrid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .hcard{min-height:128px}
+  .hh{font-size:42px}
+  .hcard.bush svg{height:122px}
+  .opts.hide-opts{gap:8px}
+  .opts.hide-opts button.zh{font-size:25px}
+}
+@media(prefers-reduced-motion:reduce){
+  .runner,.hgrid{transition:none}
+  .fish.no,.weed.sway,.bub{animation:none}
+}
