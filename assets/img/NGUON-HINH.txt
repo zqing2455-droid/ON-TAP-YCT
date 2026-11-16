@@ -1,0 +1,9 @@
+Nguồn hình trong thư mục này
+
+Cá, rong, san hô, đá: "Fish Pack 2.0" của Kenney (www.kenney.nl/assets/fish-pack)
+Gấu trúc, thỏ:        "Animal Pack Remastered" của Kenney (www.kenney.nl/assets/animal-pack-remastered)
+
+Giấy phép: Creative Commons Zero (CC0) — http://creativecommons.org/publicdomain/zero/1.0/
+Dùng tự do cho mục đích cá nhân, giáo dục và thương mại; không bắt buộc ghi nguồn.
+
+Các file SVG ở đây đã được cắt lại viewBox cho sát hình và đổi tên; nét vẽ giữ nguyên.
